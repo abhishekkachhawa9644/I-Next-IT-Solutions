@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Form</title>
+    <style>
+        /* Popup container - hidden by default */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #888;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            z-index: 9; /* Sit on top */
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+        }
+
+        /* Close button (X) */
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Input fields */
+        .popup input[type=text], .popup input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Submit button */
+        .popup button[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .popup button[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="popup" id="popupForm">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <h2>Login Form</h2>
+    <form action="#">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    // Function to show the popup
+    function showPopup() {
+        document.getElementById("popupForm").style.display = "block";
+    }
+
+    // Function to hide the popup
+    function hidePopup() {
+        document.getElementById("popupForm").style.display = "none";
+    }
+
+    // Close button click event
+    document.getElementById("closeBtn").onclick = function() {
+        hidePopup();
+    }
+
+    // Show the popup every 5 seconds
+    setInterval(function() {
+        showPopup();
+    }, 5000);
+</script>
+
+</body>
+</html>

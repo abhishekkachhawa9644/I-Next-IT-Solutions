@@ -9,6 +9,88 @@
         <!-- Site Title -->
         <title>Inext IT Solutions</title>
 
+
+
+        <style>
+
+.popup {
+            display: none; /* Initially hidden */
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            background-color: white;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        /* Dark background when popup appears */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        /* Close button */
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Form input styling */
+        .popup form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .popup form input, .popup form textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .popup form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .popup form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive layout */
+        @media screen and (max-width: 480px) {
+            .popup {
+                width: 100%;
+                max-width: 90%;
+            }
+        }
+
+
+
+        </style>
+
         <!-- Place favicon.ico in the root directory -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo-3.png">
 
@@ -25,6 +107,29 @@
     </head>
 
     <body class="header-2">
+
+
+         <!-- Popup Overlay -->
+    <div class="popup-overlay"></div>
+
+    <!-- Popup Form -->
+    <div class="popup" id="popup">
+        <span class="popup-close" id="popup-close">&times;</span>
+        <h3>Customized software solutions designed to fit your specific business requirements!</h3>
+        <p>Unlock your business's full potential with our top-tier software development team.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+
+
+
         <!-- header-area-start -->
         <header class="header sticky-active">
             <div class="header-container">
@@ -594,20 +699,24 @@
         <!-- Languages and framworks -->
 
 
-    <!--    <div class="langfram">
+       <div class="langfram">
 
             <div class="section-heading text-center">
-                <h4 class="sub-heading bg-white wow fade-in-bottom" data-wow-delay="400ms">Get the best language for software development</h4>
+                <h4 class="sub-heading bg-white wow fade-in-bottom" data-wow-delay="400ms">Get the best language and framworks for software development</h4>
                 <h2 class="section-title wow fade-in-bottom " data-wow-delay="500ms" style="font-size: large;">
                     We recognize that every project comes with its own set of distinct needs, and our developers are consistently informed about the latest advancements in technologies and tools within the software development industry. By utilizing the most suitable programming languages and frameworks, we ensure the delivery of highly secure and robust software solutions.</h2>
             </div>
+
+            
             <ul id="hexGrid">
+
+                
                 <li class="hex">
                   <div class="hexIn">
                     <a class="hexLink" href="#">
                       <img src="assets/img/icon/lang1.png" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
+                      <h1>C#</h1>
+                      <p>A modern, object-oriented programming language developed by Microsoft</p>
                     </a>
                   </div>
                 </li>
@@ -615,8 +724,8 @@
                   <div class="hexIn">
                     <a class="hexLink" href="#">
                       <img src="assets/img/icon/lang2.png" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
+                      <h1>C++</h1>
+                      <p>A powerful, high-performance programming language often used for system software</p>
                     </a>
                   </div>
                 </li>
@@ -650,7 +759,7 @@
                 <li class="hex">
                   <div class="hexIn">
                     <a class="hexLink" href="#">
-                      <img src="assets/img/icon/lang10.png" alt="" />
+                      <img src="assets/img/icon/lang6 .png" alt="" />
                       <h1>This is a title</h1>
                       <p>Some sample text about the article this hexagon leads to</p>
                     </a>
@@ -659,7 +768,7 @@
                 <li class="hex">
                   <div class="hexIn">
                     <a class="hexLink" href="#">
-                      <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
+                      <img src="assets/img/icon/lang7.png" alt="" />
                       <h1>This is a title</h1>
                       <p>Some sample text about the article this hexagon leads to</p>
                     </a>
@@ -668,7 +777,7 @@
                 <li class="hex">
                   <div class="hexIn">
                     <a class="hexLink" href="#">
-                      <img src="https://farm4.staticflickr.com/3766/12953056854_b8cdf14f21.jpg" alt="" />
+                      <img src="assets/img/icon/lang8.png" alt="" />
                       <h1>This is a title</h1>
                       <p>Some sample text about the article this hexagon leads to</p>
                     </a>
@@ -677,7 +786,7 @@
                 <li class="hex">
                   <div class="hexIn">
                     <a class="hexLink" href="#">
-                      <img src="https://farm7.staticflickr.com/6139/5986939269_10721b8017.jpg" alt="" />
+                      <img src="assets/img/icon/fram1.png" alt="" />
                       <h1>This is a title</h1>
                       <p>Some sample text about the article this hexagon leads to</p>
                     </a>
@@ -686,13 +795,139 @@
                 <li class="hex">
                   <div class="hexIn">
                     <a class="hexLink" href="#">
-                      <img src="https://farm4.staticflickr.com/3165/5733278274_2626612c70.jpg" alt="" />
+                      <img src="assets/img/icon/fram1(1).png" alt="" />
                       <h1>This is a title</h1>
                       <p>Some sample text about the article this hexagon leads to</p>
                     </a>
                   </div>
                 </li>
                 <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram2.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram3.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram4.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram5.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram6.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram7.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram8.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram9.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram10.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/fram11.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/st3.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/st4.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/st1.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <li class="hex">
+                  <div class="hexIn">
+                    <a class="hexLink" href="#">
+                      <img src="assets/img/icon/st2.png" alt="" />
+                      <h1>This is a title</h1>
+                      <p>Some sample text about the article this hexagon leads to</p>
+                    </a>
+                  </div>
+                </li>
+                <!-- <li class="hex">
                   <div class="hexIn">
                     <a class="hexLink" href="#">
                       <img src="https://farm8.staticflickr.com/7163/6822904141_50277565c3.jpg" alt="" />
@@ -746,133 +981,7 @@
                     </a>
                   </div>
                 </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm7.staticflickr.com/6217/6216951796_e50778255c.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm4.staticflickr.com/3766/12953056854_b8cdf14f21.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm7.staticflickr.com/6139/5986939269_10721b8017.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm4.staticflickr.com/3165/5733278274_2626612c70.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm8.staticflickr.com/7163/6822904141_50277565c3.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm4.staticflickr.com/3771/13199704015_72aa535bd7.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm3.staticflickr.com/2878/10944255073_973d2cd25c.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-                <li class="hex">
-                  <div class="hexIn">
-                    <a class="hexLink" href="#">
-                      <img src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
-                      <h1>This is a title</h1>
-                      <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                  </div>
-                </li>
-              </ul>
+              </ul> -->
          </div>
 
 
@@ -884,7 +993,7 @@
 
 
 
-
+<!-- 
         <section class="counter-section counter-2 bg-dark-1">
             <div class="container">
                 <div class="row align-items-center">
@@ -1052,8 +1161,8 @@
                     </div>
                 </div>
             </div>
-        </section>
-    -->
+        </section> -->
+   
         <!-- ./ feature-section -->
         
  <!--       <section class="about-section-3 about-4">
@@ -1935,6 +2044,36 @@
         <!--scrollup-->
 
         <!-- JS here -->
+
+
+        <script>
+            const popup = document.getElementById('popup');
+            const popupOverlay = document.querySelector('.popup-overlay');
+            const popupClose = document.getElementById('popup-close');
+    
+            // Function to show the popup
+            function showPopup() {
+                popup.style.display = 'block';
+                popupOverlay.style.display = 'block';
+            }
+    
+            // Function to hide the popup
+            function hidePopup() {
+                popup.style.display = 'none';
+                popupOverlay.style.display = 'none';
+            }
+    
+            // Close button event listener
+            popupClose.addEventListener('click', hidePopup);
+    
+            // Close popup when clicking outside
+            popupOverlay.addEventListener('click', hidePopup);
+    
+            // Show the popup every 5 seconds
+            setInterval(showPopup, 15000);
+        </script>
+
+        
         <script src="assets/js/vendor/jquary-3.6.0.min.js"></script>
         <script src="assets/js/vendor/bootstrap-bundle.js"></script>
         <script src="assets/js/vendor/imagesloaded-pkgd.js"></script>
